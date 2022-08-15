@@ -1,5 +1,5 @@
 <div>The status is: {{ piecesStatus$ | async | json }}</div>
 
-<div>
-  <app-item-brief [piece]="piece" *ngFor="let piece of allPieces$ | async"></app-item-brief>
+<div *ngFor="let piece of allPieces$ | async">
+  <app-item-brief [piece]="piece"></app-item-brief>
 </div>

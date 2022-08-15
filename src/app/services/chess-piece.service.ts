@@ -11,44 +11,44 @@ export class ChessPieceService {
         const data = [
             {
                 id: '1',
-                image: '',
+                image: '../assets/images/king.jpg',
                 price: 0.1,
-                material: 'wood',
+                material: 'steel',
                 name: 'King'
             },
             {
                 id: '2',
-                image: '',
+                image: '../assets/images/queen.jpg',
                 price: 0.2,
-                material: 'wood',
+                material: 'steel',
                 name: 'Queen'
             },
             {
                 id: '3',
-                image: '',
+                image: '../assets/images/rook.jpg',
                 price: 0.3,
-                material: 'wood',
+                material: 'steel',
                 name: 'Rook'
             },
             {
                 id: '4',
-                image: '',
+                image: '../assets/images/bishop.jpg',
                 price: 0.4,
-                material: 'wood',
+                material: 'steel',
                 name: 'Bishop'
             },
             {
                 id: '5',
-                image: '',
+                image: '../assets/images/knight.jpg',
                 price: 0.5,
-                material: 'wood',
+                material: 'steel',
                 name: 'Knight'
             },
             {
                 id: '6',
-                image: '',
+                image: '../assets/images/pawn.jpg',
                 price: 0.6,
-                material: 'wood',
+                material: 'steel',
                 name: 'Pawn'
             }
         ];
