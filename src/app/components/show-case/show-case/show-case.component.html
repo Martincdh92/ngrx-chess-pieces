@@ -1,5 +1,5 @@
-<p>show-case works!</p>
+<div>The status is: {{ piecesStatus$ | async | json }}</div>
 
 <div>
-    The status is: {{ piecesStatus$ | async | json}}
+  <app-item-brief [piece]="piece" *ngFor="let piece of allPieces$ | async"></app-item-brief>
 </div>

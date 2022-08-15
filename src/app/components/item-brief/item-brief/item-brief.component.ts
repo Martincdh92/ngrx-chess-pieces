@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ChessPiece } from 'src/app/models/chess-piece.model';
 
 @Component({
   selector: 'app-item-brief',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./item-brief.component.scss']
 })
 export class ItemBriefComponent implements OnInit {
+  @Input() piece: ChessPiece;
 
   constructor() { }
 
