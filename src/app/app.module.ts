@@ -9,6 +9,11 @@ import { ShowCaseComponent } from './components/show-case/show-case/show-case.co
 import { CartComponent } from './components/cart/cart/cart.component';
 import { ItemBriefComponent } from './components/item-brief/item-brief/item-brief.component';
 import { ItemDetailedComponent } from './components/item-detailed/item-detailed/item-detailed.component';
+import { ChessPieceEffects } from './state/chess-pieces/chess-piece.effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { ChessPieceService } from './services/chess-piece.service';
+import { chessPiecesReducer } from './state/chess-pieces/chess-piece.reducer';
 
 @NgModule({
   declarations: [
@@ -21,10 +26,11 @@ import { ItemDetailedComponent } from './components/item-detailed/item-detailed/
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([])
+    StoreModule.forRoot({ chessPiecesState: chessPiecesReducer }),
+    EffectsModule.forRoot([ChessPieceEffects]),
+    StoreDevtoolsModule.instrument({ name: 'TEST' })
   ],
-  providers: [],
+  providers: [ChessPieceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
