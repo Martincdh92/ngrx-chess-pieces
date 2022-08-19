@@ -1,6 +1,6 @@
 # Ngrx Chess Pieces
 
-A simple project to practice NgRx, simulating getting the pieces from an API, the adding each to the cart.
+A simple project to practice NgRx, simulating getting the pieces from an API, then adding each to the cart.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
 
