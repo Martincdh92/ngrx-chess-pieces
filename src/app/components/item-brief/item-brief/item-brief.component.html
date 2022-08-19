@@ -1,9 +1,8 @@
-<div>
-  <img src="{{ piece.image }}" alt="..." />
-  <div>
-    <h5>{{ piece.name }}</h5>
-    <p>
-      {{ piece.material }}
-    </p>
+<div class="card" style="width: 25rem;">
+  <img src="{{ piece.image }}" class="card-img-top text-center mx-auto chess-img" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center">{{ piece.name }} ${{piece.price}}</h5>
+    <p class="card-text">{{ piece.description }}</p>
+    <button (click)="addToCart()" class="btn btn-primary">Add to cart</button>
   </div>
 </div>

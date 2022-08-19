@@ -18,5 +18,4 @@ export class ShowCaseComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(loadChessPieceList());
   }
-
 }

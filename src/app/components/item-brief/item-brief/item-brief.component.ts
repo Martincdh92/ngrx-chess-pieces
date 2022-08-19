@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { ChessPiece } from 'src/app/models/chess-piece.model';
+import { AppState } from 'src/app/state/app.state';
+import { addPieceToCart } from 'src/app/state/cart/cart.actions';
 
 @Component({
   selector: 'app-item-brief',
@@ -9,9 +12,13 @@ import { ChessPiece } from 'src/app/models/chess-piece.model';
 export class ItemBriefComponent implements OnInit {
   @Input() piece: ChessPiece;
 
-  constructor() { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
+  }
+
+  addToCart(){
+    this.store.dispatch(addPieceToCart({ price: this.piece.price }));
   }
 
 }

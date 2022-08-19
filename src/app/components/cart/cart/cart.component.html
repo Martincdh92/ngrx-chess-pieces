@@ -1,1 +1,7 @@
-<p>cart works!</p>
+<div class="centered">
+    <p>You cart contains: {{cartItems$ | async }} items with a total amount of: ${{cartAmount$ | async }}</p>
+</div>
+
+<div class="centered" *ngIf="(cartAmount$ | async) > 100">
+    <p>Congratulations! Your cart contains more than $100. Apply coupon <span class="red">'CHESSROCKS'</span> at checkout for a 10% discount.</p>
+</div>

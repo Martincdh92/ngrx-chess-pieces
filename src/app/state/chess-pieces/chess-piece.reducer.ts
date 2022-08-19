@@ -1,5 +1,5 @@
-import { createReducer, on, props } from "@ngrx/store";
-import { loadChessPiece, loadChessPieceFailure, loadChessPieceList, loadChessPieceListFailure, loadChessPieceListSuccess, loadChessPieceSuccess } from "./chess-piece.actions";
+import { createReducer, on } from "@ngrx/store";
+import { loadChessPieceList, loadChessPieceListFailure, loadChessPieceListSuccess } from "./chess-piece.actions";
 import { ChessPieceState } from "./chess-piece.state";
 
 export const initialState: ChessPieceState = {
@@ -11,19 +11,9 @@ export const initialState: ChessPieceState = {
 export const chessPiecesReducer = createReducer(
     // Supply the initial state
     initialState,
-    // Add the new todo to the todos array
-    // on(addTodo, (state, { content }) => ({
-    //     ...state,
-    //     todos: [...state.todos, { id: Date.now().toString(), content: content }],
-    // })),
-    // // Remove the new todo from the todos array
-    // on(removeTodo, (state, { id }) => ({
-    //     ...state,
-    //     todos: state.todos.filter((todo) => todo.id !== id),
-    // })),
-    // Trigger loading the todos (API)
+    // Trigger loading the pieces (API)
     on(loadChessPieceList, (state) => ({ ...state, status: 'loading' })),
-    // Handle successfully loaded todos
+    // Handle successfully loaded pieces
     on(loadChessPieceListSuccess, (state, { pieces }) => ({
         ...state,
         pieces: pieces,

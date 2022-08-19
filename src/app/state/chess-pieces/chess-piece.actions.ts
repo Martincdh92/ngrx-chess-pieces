@@ -13,16 +13,6 @@ export const loadChessPieceFailure = createAction(
     props<{ error: string }>()
 );
 
-// export const addChessPiece = createAction(
-//     '[ChessPiece Page] Add ChessPiece',
-//     props<{ content: string }>()
-// );
-
-// export const removeChessPiece = createAction(
-//     '[ChessPiece Page] Remove ChessPiece',
-//     props<{ id: string }>()
-// );
-
 export const loadChessPieceList = createAction('[ChessPiece Page] Load Chess Piece List');
 
 export const loadChessPieceListSuccess = createAction(

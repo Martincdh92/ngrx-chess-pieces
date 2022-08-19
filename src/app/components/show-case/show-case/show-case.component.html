@@ -1,5 +1,15 @@
-<div>The status is: {{ piecesStatus$ | async | json }}</div>
+<app-cart></app-cart>
 
-<div *ngFor="let piece of allPieces$ | async">
-  <app-item-brief [piece]="piece"></app-item-brief>
+<div class="row centered mx-auto" *ngIf="(piecesStatus$ | async) == 'success'">
+  <div *ngFor="let piece of allPieces$ | async" class="col-md-4 col-sm-6 col-12">
+    <app-item-brief [piece]="piece"></app-item-brief>
+  </div>
+</div>
+
+<div *ngIf="(piecesStatus$ | async) != 'success'">
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>  
 </div>

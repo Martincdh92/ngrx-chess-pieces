@@ -14,6 +14,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { ChessPieceService } from './services/chess-piece.service';
 import { chessPiecesReducer } from './state/chess-pieces/chess-piece.reducer';
+import { CartService } from './services/cart.service';
+import { CartEffects } from './state/cart/cart.effects';
+import { cartReducer } from './state/cart/cart.reducer';
 
 @NgModule({
   declarations: [
@@ -26,11 +29,11 @@ import { chessPiecesReducer } from './state/chess-pieces/chess-piece.reducer';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ chessPiecesState: chessPiecesReducer }),
-    EffectsModule.forRoot([ChessPieceEffects]),
+    StoreModule.forRoot({ chessPiecesState: chessPiecesReducer, cartState: cartReducer }),
+    EffectsModule.forRoot([ChessPieceEffects, CartEffects]),
     StoreDevtoolsModule.instrument({ name: 'TEST' })
   ],
-  providers: [ChessPieceService],
+  providers: [ChessPieceService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,4 +4,5 @@ export interface ChessPiece {
     price: number;
     material: string;
     name: string;
+    description: string;
 }
